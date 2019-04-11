@@ -6,5 +6,3 @@ def home (request) :
     return render(request, 'MyDose/home.html')
 
 
-def profile (request) :
-    return render(request, 'MyDose/profile.html')    

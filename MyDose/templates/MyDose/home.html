@@ -1,6 +1,26 @@
  {%extends "MyDose/base.html"%}
-  {% block content %}  
 
+  {% block content %}  
+  
+     <div class="container bg-overlay">
+      <div class="row text-center">
+		    <h1>Welcome to MyDosage!<br> </h1>
+        <h4>Are you on<strong> Constant</strong> medication?
+         Join us today and never miss your pills!!</h4
+        <br><br>
+           
+	    </div
+      <div>
+        {% if user.is_authenticated %}
+         <a class = "btn btn-outline-primary" href ="{% url 'profile' %}" > Go to Profile </a>
+        {% else %}
+
+          <a  href="{% url 'register' %}" class="btn btn-outline-primary">Register </a>
+          <a  href="{% url 'login' %}" class="btn btn-outline-primary">Login </a>
+        {% endif %}
+        </div>
+    
+    </div>
    
  
   {% endblock content %}  

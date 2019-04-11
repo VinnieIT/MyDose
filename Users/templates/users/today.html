@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% extends "Users/profile.html" %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        
+        
+        
+      </div>
+      <h2 class="article-title">{{ object.diagnosis }}</h2>
+      <small class="text-muted">{{ object.Med_date|date:"F d, Y" }}</small>
+       {% if object.med_id == object.Medication.id  %}
+          <div>
+            <p class="article-content">{{ object.Medication_drugs.drug_name }}</p>
+          </div>
+        {% endif %}
+      
+    </div>
+  </article>
+{% endblock content %}
