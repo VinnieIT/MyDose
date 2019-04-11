@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/mikhail/myDosage/env/bin/python3",
+    "python.pythonPath": "/home/cicada/project/env/bin/python3",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
 }
