@@ -48,6 +48,10 @@ def updatemeds(request):
         'drugs_form':drugs_form
     }
     return render(request, 'users/updatemeds.html',context)
+@login_required
+def today(request):
+    
+    return render(request, 'users/today.html')
 
 
 
