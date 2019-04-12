@@ -21,9 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name ="register"),
     path("", include("MyDose.urls")),
-<<<<<<< HEAD
+ #<<<<<<< HEAD
     path("", include("pwa.urls")),
-=======
+#=======
 
->>>>>>> e07aa679e97ac218e9ce7b2017833b0b667a2ffc
+#>>>>>>> e07aa679e97ac218e9ce7b2017833b0b667a2ffc
 ]

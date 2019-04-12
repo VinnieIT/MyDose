@@ -2,29 +2,38 @@
 {% load pwa %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    {% progressive_web_app_meta %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <head> 
+    <!-- register service worker -->
+    <script>
+      if ('serviceWorker' in navigator){
+        window.addEventListener('load', function() {
+           navigator.serviceWorker.register('/service-worker.js')
+        .then(function() { console.log('[ PWA Fire Bundle ] Service Worker Registered'); });
+       });
+     }
+    </script>
+     <!-- Required meta tags -->
+     {% progressive_web_app_meta %}
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'MyDose/main.css' %}">
     <link rel="stylesheet" href="{% static 'MyDose/main.js' %}">
-    <link rel="manifest" href="/manifest.webmanifest">
     <title>My Dosage</title>
   </head>
   <body>
       <div class = "container">
-            <div class="row" >
-            {% if messages%}
-            {% for message in messages  %}
-             <div class = "alert alert-{{message.tags}}">
-             {{message}}
-             </div>
-            {% endfor %}
-            {% endif %}
-                    {% block content%} {% endblock%}
+                <div class="row" >
+                {% if messages%}
+                {% for message in messages  %}
+                 <div class = "alert alert-{{message.tags}}">
+                 {{message}}
+                 </div>
+                {% endfor %}
+                {% endif %}
+                    {% block content %}
+                     {% endblock %}
             </div>
       </div>
       
