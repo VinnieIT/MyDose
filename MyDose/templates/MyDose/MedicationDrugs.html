@@ -1,0 +1,33 @@
+{% extends "MyDose/base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+      </div>
+       
+       <table class="table">
+       <thead>
+       <tr>
+       <th>Drug_name </th>
+       <th>Mode_of_administration</th>
+       <th>Med_date</th>
+       
+       <th></th>
+       <tr>
+       </thead>
+       <tbody>
+       
+       {% for medication in all_med_drugs%}
+       <tr> 
+       <td>{{medication.drug_name}}</td> 
+       <td>{{medication.mode_of_administration}}</td>
+       <td>{{medication.date}}</td>
+       </tr>
+       {% endfor %}
+          
+       
+       </tbody>
+       </table>
+    </div>
+  </article>
+{% endblock content %}

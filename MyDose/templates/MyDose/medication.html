@@ -1,0 +1,34 @@
+{% extends "MyDose/base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+      </div>
+       
+       <table class="table">
+       <thead>
+       <tr>
+       <th>Diagnosis</th>
+       <th>Is Active</th>
+       <th></th>
+       <tr>
+       </thead>
+       <tbody>
+       {% for medication in all_medications%}
+       <tr> 
+       <td>{{medication.diagnosis}}</td>
+       {% if medication.is_active == True %}
+       <td>Yes</td>
+       {% else %}
+      <td>No</td>
+       {% endif %}
+       </tr>
+       {% endfor %}
+          
+       
+       </tbody>
+       </table>
+    </div>
+    
+  </article>
+{% endblock content %}

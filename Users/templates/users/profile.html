@@ -1,0 +1,51 @@
+{%extends "MyDose/base.html"%}
+{% load crispy_forms_tags %}
+  
+{% block content %}   
+   <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div >
+      {% if user.is_authenticated %}
+         <a  href="{% url 'logout' %}" class="btn btn-outline-primary">Logout </a>
+        {% else %}
+
+         
+        {% endif %}
+       
+    </div>
+    <div class="row">
+        <div class="column side">
+          <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'medication:my_medication_drugs'%}">Today</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'medication:my-medication'%}">Medlist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:updatemeds' %}">Add Medication</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:reminder' %}">Reminder</a>
+              </li>
+            </ul>
+        </div>
+        
+        <div class="column middle">
+          <h4>Please  set your reminders here</h4>
+              <a class="nav-link" href="{% url 'users:reminder' %}">Reminder</a>
+            
+        </div> 
+    </div>
+    
+   
+ 
+{% endblock content %}  
